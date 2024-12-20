@@ -1,0 +1,25 @@
+﻿@page
+@model CinemaCatalogue.Pages.AddMovieModel
+@{
+}
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<div class="text-center">
+    <h1 class="display-4">New Movie</h1>
+    <form method="post">
+        <div style="display:flex; justify-content:center">
+            <div style="display:grid; grid-gap:5px; width:300px">
+                <input asp-for="Movie.Title" placeholder="@nameof(Model.Movie.Title)" class="form-control" />
+                <span asp-validation-for="Movie.Title"></span>
+                <input asp-for="Movie.ReleaseYear" placeholder="@nameof(Model.Movie.ReleaseYear)" class="form-control" />
+                <span asp-validation-for="Movie.ReleaseYear"></span>
+                <input asp-for="Movie.Rating" placeholder="@nameof(Model.Movie.Rating)" class="form-control" />
+                <span asp-validation-for="Movie.Rating"></span>
+                <button type="submit" class="btn btn-primary">Add Movie</button>
+            </div>
+        </div>
+    </form>
+</div>
